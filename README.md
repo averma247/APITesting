@@ -1,9 +1,24 @@
-1)Please extract the project at your desired location
-2)Now, go to Resources folder and add your applicatio URL corresponding to URI propertry in config.properties file.
-3)You can change request body from testdata.properties file placed in Resources folder,if required.
-4)Execute the apitest.bat file
-5)Firstly, it will check that Java is installed in your system or not.If not installed, then please install Java first and set class path
-6)Secondly,it will check if maven is installed or not.If not installed, then please install maven first.
-7)After that it will execute testng.xml.
+# RESTful APIs Automation test
+##Pre-requisite
+1. Java should be installed in the system.
+2. Maven should be there in the system.
 
-NOte: Test cases are available in TechChallengeTestCases.xls for your reference.
+
+## How to install & Run in eclipse 
+1. Please extract the project at your desired location.
+2. Go to Resources folder and add your application URL corresponding to URI propertry in config.properties file.
+3. You can change request body from testdata.properties file placed in Resources folder,if required.
+4. Open the project as Maven project in eclipse.
+5. Build the Project.
+6. Now run it as Testng.
+7.It will execute all of the testcases automated in this test.
+
+## How to install & Run using command prompt
+1. Please extract the project at your desired location.
+2. Go to Resources folder and add your application URL corresponding to URI propertry in config.properties file.
+3. You can change request body from testdata.properties file placed in Resources folder,if required.
+4. Open the command prompt and go to the project path.
+5. Run the command "mvn clean install".
+6. It will execute all of the testcases automated in this test.
+
+Note: Test cases are available in TechChallengeTestCases.xls for your reference.
