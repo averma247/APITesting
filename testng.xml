@@ -3,31 +3,31 @@
 <suite name="Suite" thread-count="1" parallel="false" preserve-order="true"	verbose="2">
 	<test name="Test" preserve-order="true">
 		<classes>
-			<class name="testClasses.PlaceOrderTest" />
-			<!-- <class name="testClasses.FetchOrderTest" />
-				<class name="testClasses.TakeOrderTest" />
-					<class name="testClasses.CompleteOrderTest" />
-						<class name="testClasses.CancelOrderTest" />  -->
+			<class name="com.testing.testclasses.PlaceOrderTest" />
+			<!-- <class name="com.testing.testclasses.FetchOrderTest" />
+				<class name="com.testing.testclasses.TakeOrderTest" />
+					<class name="com.testing.testclasses.CompleteOrderTest" />
+						<class name="com.testing.testclasses.CancelOrderTest" />  -->
 		</classes>
 	</test>
  <test name="test1">
 		<classes>
-			<class name="testClasses.FetchOrderTest" />
+			<class name="com.testing.testclasses.FetchOrderTest" />
 		</classes>
 	</test>
 	<test name="test3">
 		<classes>
-			<class name="testClasses.TakeOrderTest" />
+			<class name="com.testing.testclasses.TakeOrderTest" />
 		</classes>
 	</test>
 	<test name="test4">
 		<classes>
-			<class name="testClasses.CompleteOrderTest" />
+			<class name="com.testing.testclasses.CompleteOrderTest" />
 		</classes>
 	</test>
 	<test name="test5">
 		<classes>
-			<class name="testClasses.CancelOrderTest" />
+			<class name="com.testing.testclasses.CancelOrderTest" />
 		</classes>
 	</test>
 	

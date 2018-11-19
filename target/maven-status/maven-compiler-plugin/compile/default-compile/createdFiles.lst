@@ -1,0 +1,4 @@
+com\techchallenge\ResponseParser.class
+com\techchallenge\APICalls.class
+com\techchallenge\RestClient.class
+com\techchallenge\propertyreader\Propertyreader.class
