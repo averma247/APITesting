@@ -8,6 +8,9 @@ import com.testing.RestClient;
 import com.testing.propertyreader.Propertyreader;
 
 import org.testng.AssertJUnit;
+
+import java.util.logging.Logger;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,10 +18,11 @@ import io.restassured.response.Response;
 
 public class TakeOrderTest extends RestClient {
 	String status = "take";
-
+	private static Logger logger = Logger.getLogger("TakeOrderTest"); 
 	// Verify response status code is 200 with valid order id
 	@Test(priority = 1)
 	public void verifyValidResponse() throws Exception {
+		logger.info(" Verify response status code is 200 with valid order id");
 		Response res = APICalls.updateResponse(String.valueOf(orderId), status);
 		Assert.assertEquals(200, res.getStatusCode());
 	}
@@ -26,6 +30,7 @@ public class TakeOrderTest extends RestClient {
 	// Verify response the status code is 404 if order does not exist
 	@Test(priority = 2)
 	public void verifyInValidOrderResponse() throws Exception {
+		logger.info("Verify response the status code is 404 if order does not exist");
 		Assert.assertEquals(404, APICalls.getStatusCode("0", status));
 		Assert.assertEquals(Propertyreader.getTestDataPropertyValue("messageOrderNotFound"),
 				ResponseParser.getResponseValues("0", "message", status));
@@ -35,14 +40,15 @@ public class TakeOrderTest extends RestClient {
 	// is violated
 	@Test(priority = 3)
 	public void verifyInvalidFlowResponse() throws Exception {
+		logger.info("Verify response the status code is 422 if with custom message if logic flow is violated");
 		APICalls.updateResponse(String.valueOf(orderId), status);
 		Assert.assertEquals(422, APICalls.getStatusCode(String.valueOf(orderId), status));
 	}
 
-	// Verify the message if status is already "ONGOING" and again makes it's status
-	// as ongoing
+	// Verify the message if status is already "ONGOING" and again makes it's status as ongoing
 	@Test(priority = 4)
 	public void verifyInvalidFlowResponseMessage() throws Exception {
+		logger.info("Verify the message if status is already ONGOING and again makes it's status as ongoing");
 		Assert.assertEquals(Propertyreader.getTestDataPropertyValue("message"),
 				ResponseParser.getResponseValues(String.valueOf(orderId), "message", status));
 	}

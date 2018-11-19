@@ -9,13 +9,17 @@ import com.testing.propertyreader.Propertyreader;
 
 import io.restassured.response.Response;
 
+import java.util.logging.Logger;
+
 import org.testng.Assert;
 
 public class FetchOrderTest extends RestClient {
-
+	private static Logger logger = Logger.getLogger("FetchOrderTest"); 
+	
 	// Verify the status code is 200 with valid order
 	@Test(priority = 1)
 	public void getValidOrderResponse() throws Exception {
+		logger.info("Verify the status code is 200 with valid order");
 		Response res = APICalls.getResponse(String.valueOf(orderId));
 		Assert.assertEquals(200, res.getStatusCode());
 	}
